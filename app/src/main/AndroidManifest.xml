@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mohitsaini.fragmentexample">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.ACCESS_ASSISTED_GPS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainList"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- <activity android:name=".ChkActivity"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+        <activity
+            android:name=".part_1.MainActivity">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_1.MainActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".part_1.MainActivity2"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_1.MainActivity2" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".part_1.AnonymousInnerClassExample"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_1.AnonymousInnerClassExample" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".part_1.MyJSONExample"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_1.MyJSONExample" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".part_1.RegisterActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_1.RegisterActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".part_1.WithRecyclerView"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_1.WithRecyclerView" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".part_1.TabHostExample"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_1.TabHostExample" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".part_1.FloatingButtonExample"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_1.FloatingButtonExample" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".part_2.PotraitLandscapeExample">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_2.PotraitLandscapeExample" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".part_2.RetrofitExample">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_2.RetrofitExample" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".android.hive.retrofit.RetMainActivity">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.android.hive.retrofit.RetMainActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".part_2.MyRetrofitExample">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_2.MyRetrofitExample" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".android.learn2crack.send.MainActivity">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.android.learn2crack.send.MainActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".part_2.AsyncTaskExample">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_2.AsyncTaskExample" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".part_2.NotificationExample">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_2.NotificationExample" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".part_2.CustomizeListView">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_2.CustomizeListView" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".part_2.ExpendableListView">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_2.ExpendableListView" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".android.multilevel.listview.MultilevelList">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.android.multilevel.listview.MultilevelList" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".android.picasso.PicassoExample">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.android.picasso.PicassoExample" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".android.picasso.PicassoSimple">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.android.picasso.PicassoSimple" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".part_3.SwipeViewWithRecyclerView">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_3.SwipeViewWithRecyclerView" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".part_3.NavigationDrawer"
+            android:label="@string/title_activity_navigation_drawer"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_3.NavigationDrawer" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".part_3.FloatingWidgetExample">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_3.FloatingWidgetExample" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".part_3.FloatingViewService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity android:name=".android.fragment.m.FragmentM">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.android.fragment.m.FragmentM" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".part_3.BlurImage">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_3.BlurImage" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
