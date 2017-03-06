@@ -12,7 +12,6 @@ import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import android.widget.ImageView;
 
 ///code for roundimage in feeback and myprofile
 public class Roundedimageview extends android.support.v7.widget.AppCompatImageView {
