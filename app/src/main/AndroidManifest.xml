@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_GPS" />
     <uses-permission android:name="android.permission.ACCESS_ASSISTED_GPS" />
@@ -34,8 +34,7 @@
         <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
         <!-- </intent-filter> -->
         <!-- </activity> -->
-        <activity
-            android:name=".part_1.MainActivity">
+        <activity android:name=".part_1.MainActivity">
             <intent-filter>
                 <action android:name="com.example.mohitsaini.fragmentexample.part_1.MainActivity" />
 
@@ -229,6 +228,20 @@
         <activity android:name=".part_3.BlurImage">
             <intent-filter>
                 <action android:name="com.example.mohitsaini.fragmentexample.part_3.BlurImage" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".part_3.EditTextCheckNull">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_3.EditTextCheckNull" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".part_3.CalenderWithOnlyFutureDate">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_3.CalenderWithOnlyFutureDate" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
