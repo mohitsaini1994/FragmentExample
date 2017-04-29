@@ -22,6 +22,9 @@ public class MainList extends AppCompatActivity {
             "AnonymousInner Class Example",
             "Async Task Example",
             "Blur Image",
+            "Bluetooth Java T Point",
+            "Bluetooth Tutorials Point",
+            "Bluetooth Complete Example",
             "Calender With Only Future Date",
             "Customize List View",
             "Expendable List View",
@@ -50,6 +53,9 @@ public class MainList extends AppCompatActivity {
             "part_1.AnonymousInnerClassExample",
             "part_2.AsyncTaskExample",
             "part_3.BlurImage",
+            "android.bluetooth.Bluetoothjavatpoint",
+            "android.bluetooth.BluetoothTutorialsPoint",
+            "android.bluetooth.complete.MainActivity",
             "part_3.CalenderWithOnlyFutureDate",
             "part_2.CustomizeListView",
             "part_2.ExpendableListView",
@@ -83,7 +89,8 @@ public class MainList extends AppCompatActivity {
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.card_recycler_view);
         recyclerView.setVisibility(View.GONE);
 
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, list);
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item,
+                list);
         listView.setAdapter(arrayAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
