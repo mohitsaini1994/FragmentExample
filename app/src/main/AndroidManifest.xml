@@ -277,6 +277,13 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".part_3.CustomListClickable">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_3.CustomListClickable" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
