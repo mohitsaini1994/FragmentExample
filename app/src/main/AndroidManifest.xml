@@ -284,6 +284,13 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".part_3.clickable.list.MainActivity">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.part_3.clickable.list.MainActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
