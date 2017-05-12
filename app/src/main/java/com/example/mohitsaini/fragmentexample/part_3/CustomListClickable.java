@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ListView;
 
+import com.example.mohitsaini.fragmentexample.MainList;
 import com.example.mohitsaini.fragmentexample.R;
 
 import java.util.ArrayList;
@@ -18,14 +19,9 @@ import java.util.List;
 public class CustomListClickable extends AppCompatActivity {
 
     ListView listView;
-    String[] list = {"Androidhive Retrofit Example", "AnonymousInner Class Example", "Async Task Example", "Blur Image",
-            "Bluetooth Java T Point", "Bluetooth Tutorials Point", "Bluetooth Complete Example", "Calender With Only Future Date",
-            "Customize List View", "Expendable List View", "Floating Button Example", "Floating Widget Example",
-            "Fragment M", "Main Activity", "Main Activity 2", "Multilevel List", "EditTextCheckNull", "My JSON Example",
-            "My Retrofit Example", "Navigation Drawer", "NotificationExample", "Picasso Example", "Picasso Simple",
-            "Potrait Landscape Example", "Register Activity", "Retrofit Example", "Send Data Using Volley",
-            "Swipe View With RecyclerView", "TabHost Example", "With RecyclerView"
-    };
+
+    MainList mainList1 = new MainList();
+    String[] list = mainList1.list;
 
     CustomListClIckableAdapter mAdapter;
     List<String> mListData;
@@ -43,14 +39,29 @@ public class CustomListClickable extends AppCompatActivity {
             mListData.add(list[i]);
         }
         Log.e("FINAL DATA  = ", mListData.toString());
-        for (int i=0; i < mListData.size(); i++) {
+        for (int i = 0; i < mListData.size(); i++) {
             CustomListModelClass customListModelClass = new CustomListModelClass();
             customListModelClass.setData(mListData.get(i));
+            customListModelClass.setIschecked("");
             mainList.add(customListModelClass);
         }
 
-        mAdapter = new CustomListClIckableAdapter(this, mainList);
+        if (CustomListSavable.isSaveData()) {
+            mAdapter = new CustomListClIckableAdapter(this, mainList);
+        } else {
+            mAdapter = new CustomListClIckableAdapter(this, CustomListSavable.getSaveList());
+        }
+
         listView.setAdapter(mAdapter);
 
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (CustomListSavable.isSaveData()) {
+            CustomListSavable.setSaveList(mainList);
+            CustomListSavable.setSaveData(false);
+        }
     }
 }

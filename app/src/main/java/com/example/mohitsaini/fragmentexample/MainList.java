@@ -18,7 +18,7 @@ import com.example.mohitsaini.fragmentexample.R;
 
 public class MainList extends AppCompatActivity {
 
-    String[] list = {"Androidhive Retrofit Example",
+    public String[] list = {"Androidhive Retrofit Example",
             "AnonymousInner Class Example",
             "Async Task Example",
             "Atul List Clickable",
