@@ -1,13 +1,12 @@
 package com.example.mohitsaini.fragmentexample.part_3;
 
-import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.mohitsaini.fragmentexample.R;
@@ -18,84 +17,87 @@ import java.util.List;
  * Created by mohitsaini on 2/5/17.
  */
 
-public class CustomListClIckableAdapter extends BaseAdapter{
+public class CustomListClIckableAdapter extends BaseAdapter {
 
-    private LayoutInflater mInflater;
-    private List<String> mData;
-    private CustomListClIckableAdapter.OnPairButtonClickListener mListener;
+    Context context;
+    private List<CustomListModelClass> mainList;
 
-    public CustomListClIckableAdapter(Context context) {
-        mInflater = LayoutInflater.from(context);
+    public CustomListClIckableAdapter(Context context, List<CustomListModelClass> mainList) {
+        this.context = context;
+        this.mainList = mainList;
     }
 
-    public void setData(List<String> data) {
-        mData = data;
-    }
-
-    public void setListener(CustomListClIckableAdapter.OnPairButtonClickListener listener) {
-        mListener = listener;
-    }
-
+    @Override
     public int getCount() {
-        return (mData == null) ? 0 : mData.size();
+        return mainList.size();
     }
 
-    public Object getItem(int position) {
-        return null;
+    @Override
+    public Object getItem(int i) {
+        return mainList.get(i);
     }
 
-    public long getItemId(int position) {
-        return position;
+    @Override
+    public long getItemId(int i) {
+        return i;
     }
 
-    public View getView(final int position, View convertView, ViewGroup parent) {
-        final CustomListClIckableAdapter.ViewHolder holder;
+    @Override
+    public View getView(final int i, View view, ViewGroup viewGroup) {
 
-        if (convertView == null) {
-            convertView			=  mInflater.inflate(R.layout.list_row_clickable, null);
+        final ViewHolder viewHolder;
+        if (view == null) {
+            LayoutInflater inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = inflater.inflate(R.layout.list_row_clickable, null);
 
-            holder 				= new CustomListClIckableAdapter.ViewHolder();
+            viewHolder = new ViewHolder();
 
-            holder.clickable_tv		= (TextView) convertView.findViewById(R.id.clickable_tv);
-            holder.accept = (Button) convertView.findViewById(R.id.click_approve);
-            holder.decline = (Button) convertView.findViewById(R.id.click_decline);
+            viewHolder.click_image_change = (ImageView) view.findViewById(R.id.click_image_change);
+            viewHolder.clickable_tv = (TextView) view.findViewById(R.id.clickable_tv);
+            viewHolder.accept = (Button) view.findViewById(R.id.click_approve);
+            viewHolder.decline = (Button) view.findViewById(R.id.click_decline);
 
-            convertView.setTag(holder);
+            view.setTag(viewHolder);
+            view.setTag(R.id.click_approve, viewHolder.accept);
+            view.setTag(R.id.click_decline, viewHolder.decline);
         } else {
-            holder = (CustomListClIckableAdapter.ViewHolder) convertView.getTag();
+            viewHolder = (ViewHolder) view.getTag();
         }
 
-        String device	= mData.get(position);
+        if (mainList.get(i).getIschecked().equals("true")) {
+            viewHolder.click_image_change.setBackgroundResource(R.drawable.click_list_checked);
+        } else if (mainList.get(i).getIschecked().equals("false")) {
+            viewHolder.click_image_change.setBackgroundResource(R.drawable.click_list_unchecked);
+        } else {
+            viewHolder.click_image_change.setBackgroundResource(0);
+        }
 
-        holder.clickable_tv.setText(device);
-        holder.accept.setOnClickListener(new View.OnClickListener() {
+        viewHolder.accept.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                if (mListener != null) {
-                    holder.accept.setText("true");
-                    mListener.onPairButtonClick(position);
-                }
+            public void onClick(View view) {
+                mainList.get(i).setIschecked("true");
+                viewHolder.click_image_change.setBackgroundResource(R.drawable.click_list_checked);
             }
         });
-        holder.decline.setOnClickListener(new View.OnClickListener() {
+        viewHolder.decline.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                if (mListener != null) {
-                    holder.decline.setText("true");
-                    mListener.onPairButtonClick(position);
-                }
+            public void onClick(View view) {
+                mainList.get(i).setIschecked("false");
+                viewHolder.click_image_change.setBackgroundResource(R.drawable.click_list_unchecked);
             }
         });
+        viewHolder.accept.setTag(i);
+        viewHolder.decline.setTag(i);
 
-        return convertView;
+        viewHolder.clickable_tv.setText(mainList.get(i).getData());
+
+        return view;
     }
 
-    static class ViewHolder {
-        TextView clickable_tv;
-        Button accept, decline;
-    }
-
-    public interface OnPairButtonClickListener {
-       void onPairButtonClick(int position);
+    public class ViewHolder {
+        private ImageView click_image_change;
+        private TextView clickable_tv;
+        private Button accept;
+        private Button decline;
     }
 }

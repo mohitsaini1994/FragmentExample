@@ -49,7 +49,8 @@ public class MainList extends AppCompatActivity {
             "Send Data Using Volley",
             "Swipe View With RecyclerView",
             "TabHost Example",
-            "With RecyclerView"};
+            "With RecyclerView"
+    };
 
     String[] list_going = {"android.hive.retrofit.RetMainActivity",
             "part_1.AnonymousInnerClassExample",
@@ -82,7 +83,8 @@ public class MainList extends AppCompatActivity {
             "android.learn2crack.send.MainActivity",
             "part_3.SwipeViewWithRecyclerView",
             "part_1.TabHostExample",
-            "part_1.WithRecyclerView"};
+            "part_1.WithRecyclerView"
+    };
     ListView listView;
 
     @Override
