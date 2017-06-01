@@ -59,9 +59,9 @@ public class CustomListClickable extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        if (CustomListSavable.isSaveData()) {
+//        if (CustomListSavable.isSaveData()) {
             CustomListSavable.setSaveList(mainList);
             CustomListSavable.setSaveData(false);
-        }
+//        }
     }
 }
