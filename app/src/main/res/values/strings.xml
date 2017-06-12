@@ -14,7 +14,6 @@
     <string name="drawer_close">Close</string>
 
 
-
     <!--for bluetooth-->
     <string name="text_bluetooth_off">Bluetooth is Off</string>
     <string name="text_bluetooth_on">Bluetooth is On</string>
