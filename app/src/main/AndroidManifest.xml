@@ -289,6 +289,20 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".android.sliding_drawer.Drawer">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.android.sliding_drawer.Drawer" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".android.htmlParsing.HTMLParsing">
+            <intent-filter>
+                <action android:name="com.example.mohitsaini.fragmentexample.android.htmlParsing.HTMLParsing" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
